@@ -1,8 +1,11 @@
 module Day01 (testAll) where
+-- module Day01 (testAll, answer) where
 
 import qualified Data.List as DL
+import qualified Data.List.Split as DLS
 
 import TestLib (Comparation(Comparation))
+import DataMassParsers (getFileLines)
 
 sortForSum :: [(Int, Int)] -> [(Int, Int)]
 sortForSum xys = let xs = DL.sort (map fst xys)
@@ -38,3 +41,20 @@ testAll :: IO ()
 testAll = do
     (putStrLn . unlines . map show) sortComps
     (putStrLn . unlines . map show) sumComps
+
+    {-
+
+answer :: IO ()
+answer = do
+    mass <- getFileLines "day-01.txt"
+    print $ sumDistances $ fromMass mass
+
+fromMass :: [String] -> [(Int, Int)]
+fromMass = map (
+        ( \xs -> (read (head xs), read (xs !! 1)) )
+            . filter ((>=1).length)
+            . DLS.splitOn " "
+    )
+    . filter ((>=1).length)
+
+    -}
