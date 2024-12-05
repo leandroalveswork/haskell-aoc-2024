@@ -39,8 +39,7 @@ comps =
     ]
 
 testAll :: IO ()
-testAll =
-    (putStrLn . unlines . map show) comps
+testAll = (putStrLn . unlines . map show) comps
 
     {-
 
