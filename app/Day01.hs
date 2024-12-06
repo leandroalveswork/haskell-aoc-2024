@@ -1,5 +1,5 @@
-module Day01 (testAll) where
--- module Day01 (testAll, answer) where
+module Day01 (testAll, testAll2) where
+--module Day01 (testAll, answer, testAll2, answer2) where
 
 import qualified Data.List as DL
 import qualified Data.List.Split as DLS
@@ -43,12 +43,10 @@ testAll = do
     (putStrLn . unlines . map show) sumComps
 
     {-
-
 answer :: IO ()
 answer = do
     mass <- getFileLines "day-01.txt"
     print $ sumDistances $ fromMass mass
-
 fromMass :: [String] -> [(Int, Int)]
 fromMass = map (
         ( \xs -> (read (head xs), read (xs !! 1)) )
@@ -56,5 +54,29 @@ fromMass = map (
             . DLS.splitOn " "
     )
     . filter ((>=1).length)
+    -}
 
+occurrences :: Int -> [Int] -> Int
+occurrences n = length . filter (==n)
+
+similarity :: [(Int, Int)] -> Int
+similarity xys = let xs = map fst xys
+                     ys = map snd xys
+                 in sum (map (\n -> n * occurrences n ys) xs)
+
+simComps :: [Comparation Int]
+simComps =
+    [ Comparation (101, 0, similarity [(1, 5)])
+    , Comparation (102, 2, similarity [(2, 2)])
+    , Comparation (103, 31, similarity [(3, 4), (4, 3), (2, 5), (1, 3), (3, 9), (3, 3)])
+    ]
+
+testAll2 :: IO ()
+testAll2 = (putStrLn . unlines . map show) simComps
+
+    {-
+answer2 :: IO ()
+answer2 = do
+    mass <- getFileLines "day-01.txt"
+    print $ similarity $ fromMass mass
     -}
