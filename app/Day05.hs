@@ -54,6 +54,7 @@ testAll = do
     (putStrLn . unlines . map show) violatesComps
     (putStrLn . unlines . map show) middleComps
 
+    {-
 answer :: IO ()
 answer = do
     mass <- getFileLines "day-05.txt"
@@ -72,6 +73,7 @@ fromMass l = let breaksAt =  DL.findIndices ((==0).length) l
           readRule cs = let (a:b:_) = DLS.splitOn "|" cs in (TR.read a, TR.read b)
           readOrder :: String -> [Int]
           readOrder = (map TR.read) . DLS.splitOn ","
+          -}
 
 orderViolations :: [Int] -> [(Int, Int)] -> [(Int, Int)]
 orderViolations xs rules = let indexedXs = zip [0..] xs
@@ -177,6 +179,7 @@ testAll2 = do
     (putStrLn . unlines . map show) rulesComps
     (putStrLn . unlines . map show) moveNumberComps
 
+    {-
 answer2 :: IO ()
 answer2 = do
     mass <- getFileLines "day-05.txt"
@@ -187,3 +190,4 @@ answer2 = do
                                             justFixeds = map (\(Just ax) -> ax) (filter DM.isJust fixedOs)
                                             middleNumbers = map (DM.fromMaybe 0 . middle) justFixeds
                                         in (sum middleNumbers, length (filter DM.isNothing fixedOs))
+                                        _-}
