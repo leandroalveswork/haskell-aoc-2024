@@ -19,7 +19,7 @@ common warnings
 executable haskell-aoc2024
     import:           warnings
     main-is:          Main.hs
-    other-modules:    TestLib, DataMassParsers, Day01, Day02, Day03, Day04, Day05
+    other-modules:    TestLib, DataMassParsers, Day01, Day02, Day03, Day04, Day05, Day06
     -- other-extensions:
     build-depends:    base ^>=4.16.4.0
                       , split ^>=0.2.5
