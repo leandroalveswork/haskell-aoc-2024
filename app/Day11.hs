@@ -27,9 +27,9 @@ blinkTimesComps =
 testAll :: IO ()
 testAll = (putStrLn . unlines . map show) blinkTimesComps
 
-{-
 mass :: [Integer]
 mass = [890, 0, 1, 935698, 68001, 3441397, 7221, 27]
+{-
 
 answer :: IO ()
 answer = (print . length . blinkTimes 25) mass
