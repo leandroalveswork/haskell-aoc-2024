@@ -21,7 +21,7 @@ executable haskell-aoc2024
     main-is:          Main.hs
     other-modules:    TestLib, DataMassParsers, Debugging
                       , Day01, Day02, Day03, Day04, Day05, Day06, Day07
-                      , Day08, Day09, Day10
+                      , Day08, Day09, Day10, Day11
     -- other-extensions:
     build-depends:    base ^>=4.16.4.0
                       , split ^>=0.2.5
