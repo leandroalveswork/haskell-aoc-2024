@@ -1,5 +1,5 @@
---module Day13 (testAll, testAll2) where
-module Day13 (testAll, answer, testAll2, answer2) where
+module Day13 (testAll, testAll2) where
+--module Day13 (testAll, answer, testAll2, answer2) where
 
 import qualified Data.List as DL
 import qualified Data.List.Split as DLS
