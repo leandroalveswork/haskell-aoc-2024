@@ -22,10 +22,11 @@ executable haskell-aoc2024
     other-modules:    TestLib, DataMassParsers, Debugging
                       , Day01, Day02, Day03, Day04, Day05, Day06, Day07
                       , Day08, Day09, Day10, Day11, Day12, Day13, Day14
-                      , Day15, Day16
+                      , Day15, Day16, Day17
     -- other-extensions:
     -- HLS Version = 2.10.0.0
     build-depends:    base ^>=4.20.0.0
                       , split ^>=0.2.5
+                      , ghc-internal ^>=9.1001.0
     hs-source-dirs:   app
     default-language: Haskell2010
