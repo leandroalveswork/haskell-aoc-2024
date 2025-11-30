@@ -1,5 +1,7 @@
 module TestLib (Comparation(Comparation), example) where
 
+import qualified Data.Maybe as DM
+
 newtype Comparation a = Comparation (Int, a, a)
 
 instance (Eq a, Show a) => Show (Comparation a) where
